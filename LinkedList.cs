@@ -9,11 +9,16 @@ namespace LinkedListNew
     internal class LinkedList
     {
         internal Node head;
-        public void add(int data)
+
+        //addNode() will add a new node to the list
+        public void Add(int data)
         {
+            //Creat a new node 
             Node node = new Node(data);
+            //Checks if the list is empty
             if (head == null)
             {
+                //if list is empty,head will point to new node
                 head = node;
             }
             else
@@ -25,21 +30,28 @@ namespace LinkedListNew
                 }
                 temp.next = node;
             }
-            Console.WriteLine("Insertes element = " + node.data);
+            Console.WriteLine($"{node.data} is Inserted in Linked List\n");
         }
-
-        public void display()
+        public void Insert_front(int data)
         {
-            Node temp = this.head;
+            Node newNode = new Node(data);
+            newNode.next = head;
+            head = newNode;
+        }
+        public void Display()
+        {
+            int i = 1;
+            Node temp = head;
+
             if (temp == null)
             {
-                Console.WriteLine("Linked List is Empty");
-                return;
+                Console.WriteLine("LinkedList is Empty");
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.WriteLine($"Element {i} in Linked List is : " + temp.data);
                 temp = temp.next;
+                i++;
             }
         }
     }

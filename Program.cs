@@ -6,12 +6,12 @@ namespace LinkedListNew
     {
         static void Main(string[] args)
         {
+            LinkedList list = new LinkedList();
+            list.Add(70);
+            list.Insert_front(30);
+            list.Insert_front(56);
+            list.Display();
 
-            LinkedList l_Object = new LinkedList();
-            l_Object.add(56);
-            l_Object.add(30);
-            l_Object.add(70);
-            l_Object.display();
         }
     }
 }
