@@ -9,15 +9,11 @@ namespace LinkedListNew
     internal class LinkedList
     {
         internal Node head;
-        //addNode() will add a new node to the list
-        public void Add(int data)
+        public void add(int data)
         {
-            //Creat a new node 
             Node node = new Node(data);
-            //Checks if the list is empty
             if (head == null)
             {
-                //if list is empty,head will point to new node
                 head = node;
             }
             else
@@ -29,8 +25,24 @@ namespace LinkedListNew
                 }
                 temp.next = node;
             }
-            Console.WriteLine($"{node.data} is Inserted in Linked List\n");
+            Console.WriteLine("Insertes element = " + node.data);
         }
+
+        public void display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+
         internal Node InsertAtParticularPosition(int position, int data)
         {
             if (position < 1)
@@ -53,7 +65,6 @@ namespace LinkedListNew
                         node.next = head.next;
                         head.next = node;
                         break;
-
                     }
                     head = head.next;
                 }
@@ -61,25 +72,19 @@ namespace LinkedListNew
                     Console.WriteLine("Position out of range");
             }
             Console.WriteLine();
-            Console.WriteLine("Inserted value is :" + data);
+            Console.WriteLine("Inserted value is : " + data);
             return head;
         }
-        public void Display()
-        {
-            int i = 1;
-            Node temp = head;
 
-            Console.WriteLine();
-            if (temp == null)
+        internal Node RemoveFirstNode()
+        {
+            Console.WriteLine("Deleting first Element : ");
+            if (head == null)
             {
-                Console.WriteLine("LinkeddList is Empty");
+                return null;
             }
-            while (temp != null)
-            {
-                Console.WriteLine($"Element {i} in Linked List is : " + temp.data);
-                temp = temp.next;
-                i++;
-            }
+            head = head.next;
+            return head;
         }
     }
 }

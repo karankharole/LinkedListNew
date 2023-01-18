@@ -5,14 +5,16 @@ namespace LinkedListNew
     internal class Program
     {
         static void Main(string[] args)
+           
         {
-            LinkedList list = new LinkedList();
-            list.Add(56);
-            list.Add(70);
-            list.Display();
-            list.InsertAtParticularPosition(2, 30);
-            list.Display();
-
+            LinkedList l_Object = new LinkedList();
+            l_Object.add(56);
+            l_Object.add(70);
+            l_Object.display();
+            l_Object.InsertAtParticularPosition(2, 30);
+            l_Object.display();
+            l_Object.RemoveFirstNode();
+            l_Object.display();
         }
     }
 }
