@@ -38,6 +38,24 @@ namespace LinkedListNew
             newNode.next = head;
             head = newNode;
         }
+        public void Insert_Last(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.next = null;
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node temp = new Node(data);
+                temp = head;
+                while (temp.next != null)
+                    temp = temp.next;
+                temp.next = newNode;
+            }
+        }
+
         public void Display()
         {
             int i = 1;
@@ -45,7 +63,7 @@ namespace LinkedListNew
 
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is Empty");
+                Console.WriteLine("LinkeddList is Empty");
             }
             while (temp != null)
             {
